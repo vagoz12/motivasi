@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Motivasi Hari Ini</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #e0f7fa, #fff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      text-align: center;
+      max-width: 600px;
+    }
+    h1 {
+      color: #00796b;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.3rem;
+      color: #333;
+    }
+    .author {
+      margin-top: 30px;
+      font-style: italic;
+      color: #555;
+    }
+    audio {
+      margin-top: 20px;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Motivasi Hari Ini</h1>
+    <p>"Jangan menyerah hanya karena lelah. Berhenti jika sudah selesai, bukan ketika kamu capek."</p>
+    <div class="author">— biyugantengkyut</div>
+    <audio id="bg-audio" autoplay loop>
+      <source src="bersamamu.mp3" type="audio/mpeg">
+      Browser Anda tidak mendukung pemutar audio.
+    </audio>
+  </div>
+  <script>
+    window.addEventListener('load', function () {
+      const audio = document.getElementById('bg-audio');
+      const playPromise = audio.play();
+      if (playPromise !== undefined) {
+        playPromise.then(_ => {
+          // Audio diputar otomatis
+        }).catch(error => {
+          console.warn("Autoplay gagal: ", error);
+        });
+      }
+    });
+  </script>
+</body>
+</html>
